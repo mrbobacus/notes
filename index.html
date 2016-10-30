@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#2196f3">
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>notes-vue</title>
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+<script type="text/javascript">
+        // If serviceWorker supports, then register it.
+        // if ("serviceWorker" in navigator) {
+        //     navigator.serviceWorker.register('src/assets/js/serviceWorker.js', {
+        //             scope: "./"
+        //         }) //setting scope of sw
+        //         .then(function(registration) {
+        //             console.info('Service worker is registered!');
+        //         })
+        //         .catch(function(error) {
+        //             console.error('Service worker failed ', error);
+        //         });
+        // }
+
+        function clearsw() {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    console.log("cleared: " + registration);
+                    registration.unregister()
+                }
+            })
+        }
+</script>
+
+</html>
